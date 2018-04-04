@@ -29,7 +29,7 @@ Steps:
 
 1. Package clone [docker/distribution pacakge](https://github.com/docker/distribution) from github
 2. Replace original [Dockerfile](https://github.com/docker/distribution/blob/master/Dockerfile) by this 
-[Dockerfile.distribution](https://github.com/Budry/docker-registry-arm/blob/master/distribution/Dockerfile) (Dockerfiles 
+[Dockerfile.distribution](https://github.com/Exac/docker-registry-arm/blob/master/distribution/Dockerfile) (Dockerfiles 
 should be same, only FROM directive is different)
 3. Build [docker/distribution registry](https://github.com/docker/distribution/tree/master/registry) with `make`
 4. Build a new docker registry by steps from [official repository](https://github.com/docker/distribution-library-image)
@@ -39,10 +39,10 @@ should be same, only FROM directive is different)
 
 ### Docker 
 
-You can use my official build of this package with name [budry/registry-arm](https://hub.docker.com/r/budry/registry-arm/)
+You can use my official build of this package with name [exac/registry-arm](https://hub.docker.com/r/exac/registry-arm/)
 
 ```shell
-$ docker run -d -p 5000:5000 --restart always budry/registry-arm
+$ docker run -d -p 5000:5000 --restart always exac/registry-arm
 ```
 
 I trying update build of this package as soon as possible for each docker registry update, but when you need more actual
@@ -55,7 +55,7 @@ Or you can use custom build on your ARM (Raspberry PI) device.
 **IMPORTANT NOTE: Build must be only on ARM device. On x86/x64 CPU not work!**
 
 ```shell
-$ git clone git@github.com:Budry/docker-registry-arm.git
+$ git clone git@github.com:Exac/docker-registry-arm.git
 $ cd docker-registry-arm
 $ sh build.sh -t my/registry
 $ docker run -d -p 5000:5000 --restart always my/registry
@@ -66,7 +66,7 @@ This will use the reigstry version specified in the `TAG` file.
 or 
 
 ```shell
-$ git clone git@github.com:Budry/docker-registry-arm.git
+$ git clone git@github.com:Exac/docker-registry-arm.git
 $ cd docker-registry-arm
 $ sh build.sh -t my/registry master
 $ docker run -d -p 5000:5000 --restart always my/registry
